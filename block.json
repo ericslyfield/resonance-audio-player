@@ -1,0 +1,22 @@
+{
+    "apiVersion": 2,
+    "title": "Resonance: Waveform Player",
+    "name": "resonance-audio-player/waveform",
+    "attributes": {
+        "content": {
+            "type": "string",
+            "source": "html",
+            "selector": "p",
+            "default": "Hello World (from the editor)."
+        },
+        "alignment" : {
+            "type": "string",
+            "default": "none"
+        }
+    },
+    "category": "media",
+    "icon": "media-audio",
+    "editorScript": "file:./block.js",
+    "editorStyle": "file:./editor.css",
+    "style": "file:./style.css"
+}
