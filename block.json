@@ -1,6 +1,6 @@
 {
     "apiVersion": 2,
-    "title": "Resonance: Waveform Player",
+    "title": "Resonance: Audio Player",
     "name": "resonance-audio-player/waveform",
     "attributes": {
         "content": {

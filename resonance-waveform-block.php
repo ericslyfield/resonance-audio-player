@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Resonance Waveform Block
+ * Plugin Name: Resonance Audio Player [!?]
  */
 
 function resonance_waveform_register_block() {

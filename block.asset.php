@@ -6,5 +6,5 @@
             'wp-polyfill',
             'wp-block-editor'
         ),
-        'version' => '0.3'
+        'version' => '0.4'
     );

@@ -1,8 +1,9 @@
 ( function ( blocks, element, blockEditor ) {
     
     var BlockControls = blockEditor.BlockControls;
+    var InspectorControls = blockEditor.InspectorControls;
     var AlignmentControl = blockEditor.AlignmentControl;
-    var blockElement = element.createElement;
+    var element = element.createElement;
     var RichText = blockEditor.RichText;
 
     blocks.registerBlockType( 'resonance-audio-player/waveform', {
@@ -16,23 +17,32 @@
                 console.log(properties.attributes.content);
             }
 
-            return blockElement(
+            function onChangeAlignment(newAlignment){
+                properties.setAttributes({ alignment: newAlignment === undefined ? 'none' : newAlignment });
+            }
+
+            // Root Element
+            return element(
                 'div',
                 blockProps,
-                blockElement(
+                element(
                     BlockControls,
                     {},
-                    blockElement(
+                    element(
                         AlignmentControl,
                         {
-                            onChange: onChangeContent
+                            value: properties.attributes.alignment,
+                            onChange: onChangeAlignment
                         }
                     )
                 ),
-                blockElement(
+                element(
                     RichText,
                     {
                         tagName: 'p',
+                        style: {
+                            textAlign: properties.attributes.alignment
+                        },
                         value: properties.attributes.content,
                         onChange: onChangeContent
                     }
@@ -45,13 +55,16 @@
 
             var blockProps = blockEditor.useBlockProps.save();
 
-            return blockElement(
+            return element(
 
                     RichText.Content,
                     Object.assign(
                       blockProps, 
                         {
                             tagName: 'p',
+                            style: {
+                                textAlign: properties.attributes.alignment
+                            },
                             value: properties.attributes.content
                         }  
                     )
