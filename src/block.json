@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "resonance-audio-player/waveform",
+	"version": "0.1.0",
+	"title": "Resonance Audio Player",
+	"category": "media",
+	"icon": "controls-volumeon",
+	"description": "An audio player.",
+	"keywords": [ "music", "sound", "podcast", "recording" ],
+	"attributes": {
+		"waveform":{
+			"type": "string",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": ".waveform audio div"
+		},
+		"media":{
+			"type":"object",
+			"source": "query",
+			"id": "number",
+			"caption": "string"
+		},
+		"src": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "audio",
+			"attribute": "src"
+		},
+		"caption": {
+			"type": "string",
+			"source": "text",
+			"selector": "div",
+			"default": "A default caption..."
+		},
+		"id": {
+			"type": "number"
+		},
+		"autoplay": {
+			"type": "boolean",
+			"source": "attribute",
+			"selector": "audio",
+			"attribute": "autoplay"
+		},
+		"loop": {
+			"type": "boolean",
+			"source": "attribute",
+			"selector": "audio",
+			"attribute": "loop"
+		},
+		"preload": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "audio",
+			"attribute": "preload"
+		}
+	},
+	"supports": {
+		"anchor": true,
+		"align": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"textdomain": "resonance-react",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
